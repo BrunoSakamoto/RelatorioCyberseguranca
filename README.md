@@ -48,19 +48,19 @@ Executar exercícios na bWAPP: identificar vulnerabilidade SQLi (Search/GET), ex
 Evitar concatenação direta de entradas em queries. Utilizar PreparedStatement / parametrização, ORMs, validação de entrada, escaping e controle de privilégios no BD.
 
 ### Prints da Aula
-![Figura 1](print1.jpeg) 
+![Figura 1](/print1.jpeg) 
 
 Figura 1 tentativa com admin mostrando erro de senha — confirma que admin existe. 
 
-![Figura 2](print2.jpeg) 
+![Figura 2](/print2.jpeg) 
 
 Figura 2 payload ' OR '1'='1' -- usado para contornar autenticação. 
 
-![Figura 3](print3.jpeg) 
+![Figura 3](/print3.jpeg) 
 
 Figura 3 payload direcionado para autenticar como admin.
 
-![Figura 4](print4.jpeg) 
+![Figura 4](/print4.jpeg) 
 
 Figura 4 tela demonstrando login bem-sucedido após injeção SQL.
  
@@ -85,30 +85,30 @@ Usar ZAP + sqlmap na aplicação Mutillidae II (ou bWAPP) para identificar vulne
 Eliminar pontos de injeção: parametrização/PreparedStatements, uso de ORM, validação e sanitização de entrada, limitar privilégios do usuário do BD e monitorar/tratar erros para não vazar informações.
 
 ### Prints da Aula
-![Figura 5](print5.jpeg) 
+![Figura 5](/print5.jpeg) 
 
 Figura 5 aba History — localizar o GET da busca (parâmetro title). 
 
-![Figura 6](print6.jpeg) 
+![Figura 6](/print6.jpeg) 
 
 Figura 6 visualização do request que será usado no SQLmap.
 
-![Figura 7](print7.jpeg) 
+![Figura 7](/print7.jpeg) 
 
 Figura 7 visualização da response que será usado no SQLmap.
 
-![Figura 8](print8.jpeg) 
+![Figura 8](/print8.jpeg) 
 
 Figura 8 listagem de bancos detectados.
 
-![Figura 9](print9.jpeg) 
+![Figura 9](/print9.jpeg) 
 Figura 9 banco em uso identificado pelo sqlmap.
 
-![Figura 10](print10.jpeg) 
+![Figura 10](/print10.jpeg) 
 
 Figura 10 tabelas do banco alvo.
 
-![Figura 11](print11.jpeg) 
+![Figura 11](/print11.jpeg) 
 
 Figura 11 extração da tabela users (hashes/senhas).
 
@@ -140,15 +140,15 @@ No bWAPP (bee/bug) acessar 'Cross-Site Scripting - Stored (Blog)': inserir paylo
 Evitar execução de código inserido por usuários: aplicar HTML/JS encoding (escaping), usar frameworks que fazem encoding automático (React, Angular, Razor), validar e sanitizar entradas, usar whitelists e sanitizadores (ex.: Ganss.XSS, ESAPI) para campos que aceitam HTML.
 
 ### Prints da Aula
-![Figura 12](print12.jpeg) 
+![Figura 12](/print12.jpeg) 
 
 Figura 12 alerta mostrado por <script>alert("Site Hackeado!");</script>.
 
-![Figura 13](print13.jpeg) 
+![Figura 13](/print13.jpeg) 
 
 Figura 13 Remove todo o conteúdo visível da página.
 
-![Figura 14](print14.jpeg) 
+![Figura 14](/print14.jpeg) 
 
 Figura 14 Substitui conteúdo por imagem arbitrária.
 
@@ -173,19 +173,19 @@ No bWAPP (bee/bug) → 'Cross-Site Scripting - Stored (Blog)' inserir hook.js e 
 BeEF é uma ferramenta de teste/educacional. Seu uso em alvos sem autorização é ilegal e antiético. Realizar testes apenas em ambientes de laboratório autorizados.
 
 ### Prints da Aula
-![Figura 15](print15.png) 
+![Figura 15](/print15.png) 
 
 Figura 15 página falsa do Facebook exibida ao usuário (Pretty Theft). 
 
-![Figura 16](print16.jpeg)
+![Figura 16](/print16.jpeg)
 
 Figura 16 credenciais e entradas capturadas pelo módulo. 
 
-![Figura 17](print17.jpeg) 
+![Figura 17](/print17.jpeg) 
 
 Figura 17 notificação falsa exibida no navegador da vítima.
 
-![Figura 18](print18.jpeg) 
+![Figura 18](/print18.jpeg) 
 
 Figura 18 interação com a notificação inicia o download configurado.
 
@@ -226,15 +226,15 @@ Não construa comandos shell concatenando entradas do usuário. Use APIs que nã
 ### Tarefa:
 Acessar bwapp (bee/bug) → OS Command Injection. Testar envio de payloads que concatenem comandos e observar respostas do servidor; documentar comandos testados e resultados.
 ### Prints da Aula
-![Figura 19](print19.jpeg)
+![Figura 19](/print19.jpeg)
 
 Figura 19 campo DNS Lookup — insira google.com.br e acione a consulta.
 
-![Figura 20](print20.jpeg) 
+![Figura 20](/print20.jpeg) 
 
 Figura 20 representação do comando nslookup sendo chamado pelo backend.
 
-![Figura 21](print21.jpeg) 
+![Figura 21](/print21.jpeg) 
 
  Figura 21 local da tarefa — bWAPP (OS Command Injection).
 
@@ -260,11 +260,11 @@ Usar commix no ambiente bwapp (bee/bug) para identificar e explorar Command Inje
 Evitar passagem de entradas não validadas para execuções de shell. Usar APIs que não invoquem o shell, validar/filtrar entradas, aplicar princípios de privilégio mínimo e isolar serviços.
 
 ### Prints da Aula
-![Figura 22](print22.jpeg) 
+![Figura 22](/print22.jpeg) 
 
 Figura 22 captura na aba History mostrando headers, cookies e o corpo da requisição (ex.: target=google.com&form=submit).
 
-![Figura 23](print23.jpeg) 
+![Figura 23](/print23.jpeg) 
 
 Figura 23 comando Commix pronto para execução, usando URL, cookie e parâmetro INJECT_HERE no --data.
 
@@ -302,15 +302,15 @@ Explorar LFI em bwapp: usar Directory Traversal para acessar arquivos locais do 
 ### Prevenção:
 Não permita que usuários controlem caminhos de inclusão. Use whitelists de arquivos permitidos, normalize/resolve caminhos e rejeite traversal sequences, desabilite funções de include dinâmico quando possível, aplique controles de acesso estritos e mantenha arquivos sensíveis fora do diretório acessível pela web.
 ### Prints da Aula
-![Figura 24](print24.jpeg) 
+![Figura 24](/print24.jpeg) 
 
 Figura 24 comando Commix montado com URL, cookie e --data
 
-![Figura 25](print25.jpeg) 
+![Figura 25](/print25.jpeg) 
 
 Figura 25 tela da funcionalidade Directory Traversal mostrando message.txt.
 
-![Figura 26](print26.jpeg) 
+![Figura 26](/print26.jpeg) 
 
 Figura 26 execução sequencial dos comandos para localizar e ler message.txt e explorar o diretório.
 
@@ -340,31 +340,31 @@ Evitar inclusão de arquivos por URL; validar/whitelist parâmetros, restringir 
 ### Segurança e Ética:
 Ferramentas e técnicas mostradas são para fins educacionais e de teste em ambientes autorizados. Uso em alvos reais sem permissão é ilegal.
 ### Prints da Aula
-![Figura 27](print27.jpeg) 
+![Figura 27](/print27.jpeg) 
 
 Figura 27 sequência no terminal do Kali demonstrando sudo e a cópia do c99.php para /var/www/html/c99.txt, preparando o host atacante para servir o shell.
 
-![Figura 28](print28.jpeg) 
+![Figura 28](/print28.jpeg) 
 
 Figura 28 bWAPP na página Remote & Local File Inclusion com o C99 incluído via RFI, mostrando a interface do web shell embutida.
 
-![Figura 29](print29.jpeg) 
+![Figura 29](/print29.jpeg) 
 
 Figura 29 listagem de diretórios e arquivos exibida pelo C99 (evidência de acesso a estrutura de arquivos do servidor).
 
-![Figura 30](print30.png) 
+![Figura 30](/print30.png) 
 
 Figura 30 página inicial do DVWA (usuário admin) — ponto de partida para testes de upload.
 
-![Figura 31](print31.jpeg) 
+![Figura 31](/print31.jpeg) 
 
 Figura 31 tentativa de upload de mini2022.php no DVWA; upload bloqueado/recusado pela aplicação. 
 
-![Figura 32](print32.jpeg) 
+![Figura 32](/print32.jpeg) 
 
 Figura 32 C99Shell mostrando arquivos presentes no diretório de uploads (c99.php, mini2022.php, etc.) e controles para execução/edição.
 
-![Figura 33](print33.jpeg) 
+![Figura 33](/print33.jpeg) 
 
 Figura 33 interface de web shell (r57/c99) exibindo área de execução de comandos e saída — evidência de shell ativo no servidor.
 
@@ -406,18 +406,18 @@ Estudar e executar testes controlados em laboratório: simular SYN Flood com hpi
 Ataques DoS/DDoS sem autorização são ilegais. Realize quaisquer testes apenas em ambientes de laboratório autorizados e com consentimento explícito.
 ### Prints da Aula
 
-![Figura 34](print34.jpeg) 
+![Figura 34](/print34.jpeg) 
 
 Figura 34 sequência no terminal elevando para root e iniciando hping3 -c 10000 -d 120 -S -w 64 -p 21 --flood --rand-source 10.0.2.4 — início de um SYN flood (apenas em laboratório autorizado).
 
-![Figura 35](print35.jpeg) 
+![Figura 35](/print35.jpeg) 
 
 Figura 35 execução do comando hping3 -S -P -U --flood -V --rand-source 10.0.2.4, demonstrando flood com flags PUSH/URG e fontes randômicas. 
 
-![Figura 36](print36.jpeg) 
+![Figura 36](/print36.jpeg) 
 
 Figura 36 terminal mostrando nping --tcp-connect --rate=90000 -c 900000 -q 10.0.2.1 em execução, iniciando conexões TCP em alta taxa contra o alvo.
 
-![Figura 37](print37.jpeg) 
+![Figura 37](/print37.jpeg) 
 
 Figura 37  Serviço alvo ficou inacessível após o ataque de conexão massiva.
